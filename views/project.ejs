@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details</title>
+  <link href="/css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <%- include('partials/navbar', { page: "/solutions/projects" }) %>
+
+  <section class="hero bg-base-200 py-10 mb-6">
+  <div class="hero-content text-center">
+    <div class="max-w-2xl">
+      <h1 class="text-4xl font-bold"><%= project.title %></h1>
+      <p class="py-4 text-lg">Below, you will find detailed information about the project: <%= project.title %>.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Container for Project Card -->
+  <div class="p-6 max-w-4xl mx-auto">
+        <div class="card bg-base-100 shadow-md">
+      <figure>
+        <img src="<%= project.feature_img_url %>" alt="<%= project.title %>" class="w-full h-60 object-cover" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title"><%= project.title %></h2>
+        <p><%= project.summary_short %></p>
+        <p class="mt-4"><%= project.intro_short %></p>
+        <p class="mt-4 font-semibold">Impact:</p>
+        <p><%= project.impact %></p>
+        <a href="<%= project.original_source_url %>" class="btn btn-accent mt-4" target="_blank">Learn More</a>        
+        <p id="quote" class="italic text-sm mt-6"></p>
+        <p id="author" class="text-sm font-semibold"></p>
+        <a href="#" onclick="history.back(); return false;" class="btn btn-outline mt-6">← Back</a>
+      </div>
+    </div>
+  </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("https://dummyjson.com/quotes/random")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("quote").textContent = `"${data.quote}"`;
+          document.getElementById("author").textContent = `— ${data.author}`;
+        })
+        .catch(() => {
+          document.getElementById("quote").textContent = "Failed to load quote.";
+        });
+    });
+  </script>
+  
+</body>
+
+</html>

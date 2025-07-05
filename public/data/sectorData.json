@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "sector_name": "Land Sinks",
+        "url": "/solutions/projects?sector=Land-Sinks"
+    },
+    {
+        "id": 2,
+        "sector_name": "Industry",
+        "url": "/solutions/projects?sector=Industry"
+    },
+    {
+        "id": 3,
+        "sector_name": "Transportation",
+        "url": "/solutions/projects?sector=Transportation"
+    },
+    {
+        "id": 4,
+        "sector_name": "Electricity",
+        "url": "/solutions/projects?sector=Electricity"
+    },
+    {
+        "id": 5,
+        "sector_name": "Food Agriculture and Land Use",
+        "url": "/solutions/projects?sector=Food-Agriculture-and-Land-Use"
+    }
+]

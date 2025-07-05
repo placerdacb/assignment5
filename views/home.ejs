@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Solutions</title>
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- navbar -->
+  <%- include('partials/navbar', { page: "/" }) %>
+  <!-- main container -->
+  <main>
+    <!-- hero section -->
+
+    <div class="hero bg-base-200 min-h-screen">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Welcome to <br> Climate Solutions!</h1>
+          <p class="py-6">
+            We invite you to explore our projects of climate solutions.<br>
+            Discover impactful initiatives across different sectors working to combat climate change.<br><br>
+            Here, you can find projects and initiatives across various sectors that aim to combat climate change and
+            promote sustainability.
+          </p>
+          <button class="btn btn-accent" onclick="window.location.href='/projects'">View Projects</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/scriptNav.js"></script>
+
+</body>
+
+</html>

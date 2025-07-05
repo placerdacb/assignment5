@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Solutions</title>
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <%- include('partials/navbar', { page: "/about" }) %>
+
+    <!-- main container -->
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content text-center">
+            <div class="max-w-lg">
+
+                <h1 class="text-5xl font-bold">About me!</h1>
+                <p class="py-6">
+                <div class="container max-w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+
+                        <!--grid with image-->
+                        <div class="card bg-base-100 w-72 shadow-sm">
+                            <div class="card-body items-center text-center">
+                                <figure class="px-10 pt-10">
+                                    <img src="/data/myImage.png" class="w-full h-full object-cover"
+                                        alt="a AI image representing myself in front of a brazilian beach"
+                                        class="rounded-xl" />
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="border-2 p-6">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div class="card card-side bg-base-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h2 class="card-title">My name is Priscilla!</h2>
+                                        <p>
+                                            I am doing CPP program on Seneca College, and I will graduate in the
+                                            the end of the year. Aside of all the tecnological skills I have
+                                            acquired during my studies, I am also a person who loves the nature and
+                                            the environment. I am not a big fan of the city life. I love being
+                                            close to the nature and I am passionate about the environment.
+                                            <br>
+                                            <br>
+                                            I come from a city called Recife, in Brazil, which is surrounded by
+                                            beautiful beaches and a rich culture. Our weather is tropical, which
+                                            means we have a lot of sunshine and warm temperatures all year round.
+                                            <br>
+                                            <br>
+                                            Spend time in the beach is one of my favorite things to do, and I love
+                                            do it with my family and friends, and I am always looking
+                                            or new ways to make a positive impact on the world around me.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="card card-side bg-base-100 shadow-sm">
+                                    <div class="card-body">
+                                        <p>
+                                            I am a very reserved person, so I didn't want to put my real picture here,
+                                            but I requested an AI to generate an image that represents me in one of my
+                                            favorite places,
+                                            which is Fernando de Noronha, a beautiful island in Brazil.
+                                            <br>
+                                            <br>
+                                            It is a place with stunning beaches, rich marine life, and a peaceful
+                                            atmosphere.
+                                            <br>
+                                            <br>
+                                            if you want to know more about it, you can check the
+                                            <a href="https://whc.unesco.org/en/list/1000/" 
+                                            target="_blank" class="link link-primary">
+                                            UNESCO page</a>.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            </p>
+        </div>
+    </div>
+    </div>
+
+    <script src="/scriptNav.js"></script>
+
+</body>
+
+</html>

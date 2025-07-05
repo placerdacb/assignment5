@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects</title>
+  <link href="/css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <%- include('partials/navbar', { page: "/solutions/projects" }) %>
+
+  <!-- page title -->
+  <main class="max-w-6xl mx-auto p-6">
+    <h1 id="pageTitle" class="text-4xl font-bold mb-6">Projects</h1>
+    <h3 class="mb-6"> To filter the projects by sector, click on the “Choose a Sector" button below or select the desired sector from the list.<br>
+      You can also view all projects by clicking the "All Projects" button. Each project is linked to its details page for more information.
+    </h3>
+      
+    <!-- filter to go back to all projects -->
+    <div class="flex gap-8">
+      <a href="/solutions/projects" class="btn btn-accent">All Projects</a>
+      
+      <div class="dropdown dropdown-right btn-accent">
+        <div tabindex="0" role="button" class="btn m-1">Choose a Sector</div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+          <% if (projects && projects.length > 0) { %>
+      <% projects.forEach(project => { %>
+        <li>
+          <a href="/solutions/projects/<%= project.id %>"><%= project.title %></a>
+        </li>
+      <% }) %>
+    <% } else { %>
+      <li><span>No projects found</span></li>
+    <% } %>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Projects Table -->
+    <div class="overflow-x-auto mt-20">
+      <table class="table-lg border-separate border-spacing-y-6">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Sector</th>
+            <th>Summary</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (projects && projects.length > 0) { %>
+            <% projects.forEach(project => { %>
+              <tr>
+                <td class="px-4 py-6"><%= project.title %></td>
+                <td class="px-4 py-6 text-center">
+                    <a href="/solutions/projects?sector=<%= project.sector.replace(/\s+/g, '+') %>" class="btn btn-xs btn-outline">
+                    <%= project.sector %>
+                  </a>
+                </td>
+                <td class="px-4 py-6"><%= project.summary_short %></td>
+                <td class="px-4 py-6">
+                  <a href="/solutions/projects/<%= project.id %>" target="_blank" class="btn btn-xs btn-info text-white"> Details</a>
+                </td>
+              </tr>
+            <% }) %>
+          <% } else { %>
+            <tr>
+              <td colspan="4" class="text-center">No projects found.</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+
+</html>
