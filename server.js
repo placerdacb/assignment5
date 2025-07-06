@@ -7,7 +7,7 @@
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 * 
 *  Name: Priscilla Lacerda Student ID: 159881234 Date: Jun, 15 2025
-*  Published URL: https://placerda.github.io/WEB322-Assignment4/
+*  Published URL: https://github.com/placerdacb/Assignment4.git
 *
 ********************************************************************************/
 
