@@ -1,5 +1,5 @@
 /********************************************************************************
-*  WEB322 – Assignment 04
+*  WEB322 – Assignment 05
 * 
 *  I declare that this assignment is my own work in accordance with Seneca's
 *  Academic Integrity Policy:
@@ -7,7 +7,8 @@
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 * 
 *  Name: Priscilla Lacerda Student ID: 159881234 Date: Jul, 20 2025
-*  Published URL: https://github.com/placerdacb/Assignment4.git
+*  Published URL: https://assignment5-flame.vercel.app 
+*  GitHub Repository: https://github.com/placerdacb/assignment5
 *
 ********************************************************************************/
 
