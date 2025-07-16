@@ -19,7 +19,7 @@
       <p class="py-4 text-lg">Below, you will find detailed information about the project: <%= project.title %>.</p>
     </div>
   </div>
-</section>
+  </section>
 
   <!-- Container for Project Card -->
   <div class="p-6 max-w-4xl mx-auto">
@@ -41,7 +41,7 @@
     </div>
   </div>
 
-    <script>
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
       fetch("https://dummyjson.com/quotes/random")
         .then(res => res.json())
@@ -54,6 +54,12 @@
         });
     });
   </script>
+
+  <footer class="footer sm:footer-horizontal footer-center bg-accent text-gray-600 p-4">
+    <aside>
+      <p class=""><strong> Priscilla Lacerda - WEB322 Assingment 5 </strong></p>
+    </aside>
+  </footer>
   
 </body>
 

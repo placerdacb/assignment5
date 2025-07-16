@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Solutions</title>
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <%- include('partials/navbar', { page: "/500" }) %>
+
+    <!-- main container -->
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <figure class="px-10 pt-10">
+                    <img src="/data/500.png" class="w-20 h-auto" 
+                    alt="500 error" />
+                </figure>
+                <h6 class="text-4xl font-bold"><%= message %></h6>
+                
+                <p class="py-6">
+                    Let’s get you back!
+                </p>
+                <button class="btn btn-accent" onclick="history.back(); return false;">← Go Back</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer sm:footer-horizontal footer-center bg-accent text-gray-600 p-4">
+        <aside>
+            <p class=""><strong> Priscilla Lacerda - WEB322 Assingment 5 </strong></p>
+        </aside>
+    </footer>
+</body>
+</html>

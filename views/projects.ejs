@@ -48,6 +48,7 @@
             <th>Sector</th>
             <th>Summary</th>
             <th>Details</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -56,13 +57,20 @@
               <tr>
                 <td class="px-4 py-6"><%= project.title %></td>
                 <td class="px-4 py-6 text-center">
-                    <a href="/solutions/projects?sector=<%= project.sector.replace(/\s+/g, '+') %>" class="btn btn-xs btn-outline">
-                    <%= project.sector %>
+                  <% if (project.Sector) { %>
+                    <a href="/solutions/projects?sector=<%= project.Sector.sector_name.replace(/\s+/g, '+') %>" class="btn btn-xs btn-outline">
+                    <%= project.Sector.sector_name %>
                   </a>
+                  <% } else { %>
+                    <span class="text-gray-500 italic">No Sector</span>
+                  <% } %>
                 </td>
                 <td class="px-4 py-6"><%= project.summary_short %></td>
                 <td class="px-4 py-6">
                   <a href="/solutions/projects/<%= project.id %>" target="_blank" class="btn btn-xs btn-info text-white"> Details</a>
+                </td>
+                <td class="px-4 py-6">
+                  <a href="/solutions/editProject/<%= project.id %>" target="_blank" class="btn btn-xs btn-success text-white"> Edit</a>
                 </td>
               </tr>
             <% }) %>
@@ -75,6 +83,12 @@
       </table>
     </div>
   </main>
+
+  <footer class="footer sm:footer-horizontal footer-center bg-accent text-gray-600 p-4">
+    <aside>
+      <p class=""><strong> Priscilla Lacerda - WEB322 Assingment 5 </strong></p>
+    </aside>
+  </footer>
 
 </body>
 

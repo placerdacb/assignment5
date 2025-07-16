@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pastel">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Project - <%= project.title %> </title>
+  <link href="/css/output.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+     <%- include('partials/navbar', { page: '' }) %>
+    <!-- main container -->
+    <main>
+    <!-- hero section -->
+    <div class="hero bg-base-200 min-h-screen">
+        <div>
+            <h1 class="text-5xl font-bold">Editing a Project </h1>
+            <p class="py-6">
+            On this page, you can edit or delete a existing project in our database.
+            Please fill out the form below with the project details.
+            </p>
+            <!-- Form to edit project -->
+            <form action="/solutions/editProject" method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="id" value="<%= project.id %>">
+            
+                <div class="space-y-12">
+                    <div class="border-b border-gray-900/10 pb-12">
+                        <h2 class="text-base/7 font-semibold text-gray-900">Editing Project: <%= project.title %> </h2>
+                        <p class="mt-1 text-sm/6 text-gray-600">Update the information for this project.</p>
+
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <!-- Project Title -->
+                            <div class="sm:col-span-4">
+                                <label for="title" class="block text-sm font-medium text-gray-900">Project Title</label>
+                                <div class="mt-2">
+                                    <input type="text" name="title" id="title" required
+                                    value="<%= project.title %>"
+                                    class="block w-full input input-accent"/>
+                                </div>
+                            </div>
+        
+
+                            <!-- Project Image URL -->
+                            <div class="sm:col-span-4">
+                                <label for="feature_img_url" class="block text-sm font-medium text-gray-900">Project Image URL</label>
+                                <div class="mt-2">
+                                    <input type="url" name="feature_img_url" id="feature_img_url" required
+                                    value="<%= project.feature_img_url %>"
+                                    class="block w-full input input-accent" />
+                                </div>
+                            </div>
+
+                            <!-- Sector ID -->
+                            <div class="sm:col-span-4">
+                                <label for="sector_id" class="block text-sm font-medium text-gray-900">Sector</label>
+                                <div class="mt-2">
+                                    <select name="sector_id" id="sector_id" required
+                                    class="block w-full select select-accent">
+                                    <% sectors.forEach(sector => { %>
+                                        <option value="<%= sector.id %>" <%= (project.sector_id == sector.id) ? "selected" : "" %>>
+                                            <%= sector.sector_name %>
+                                        </option>
+                                    <% }) %>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Short Introduction -->
+                            <div class="sm:col-span-6">
+                                <label for="intro_short" class="block text-sm font-medium text-gray-900">Short Introduction</label>
+                                <div class="mt-2">
+                                    <textarea name="intro_short" id="intro_short" rows="3" required
+                                    class="block w-full textarea textarea-accent"><%= project.intro_short %></textarea>
+                                </div>
+                            </div>
+
+                        
+                            <!--Short Summary-->
+                            <div class="sm:col-span-6">
+                                <label for="summary_short" class="block text-sm font-medium text-gray-900">Summary</label>
+                                <div class="mt-2">
+                                <textarea name="summary_short" id="summary_short" rows="3" required
+                                class="block w-full textarea textarea-accent"><%= project.summary_short %></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Impact -->
+                            <div class="sm:col-span-6">
+                                <label for="impact" class="block text-sm font-medium text-gray-900">Impact</label>
+                                <div class="mt-2">
+                                    <textarea name="impact" id="impact" rows="3" required
+                                    class="block w-full textarea textarea-accent"><%= project.impact %></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Original Source URL -->
+                            <div class="sm:col-span-6">
+                                <label for="original_source_url" class="block text-sm font-medium text-gray-900">Original Source URL</label>
+                                <div class="mt-2">
+                                    <input type="url" name="original_source_url" id="original_source_url" required
+                                    value="<%= project.original_source_url %>"
+                                    class="block w-full input input-accent" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                        
+                    <!-- Buttons -->    
+                    <div class="mt-6 flex items-center justify-end gap-x-6">
+                        <!--Cancel Button-->
+                        <a href="/solutions/projects" class="text-sm font-semibold text-gray-900">Cancel</a>
+                        <!--Update Project Button-->
+                        <button type="submit" class="btn btn-accent">Update Project</button>
+                        
+                        <!-- Delete project Button -->
+                        <a href="/solutions/deleteProject/<%= project.id %>" class="btn btn-error text-white">Delete Project</a>
+                    </div>                   
+                </div>                
+            </form>
+                        
+            <!--All Projects Button-->
+            <div class="mt-6 mb-12">
+                <button class="btn btn-accent" onclick="window.location.href='/projects'"> &#8592 All Projects</button>
+            </div>
+      </div>
+    </div>
+    
+    </main>
+    
+    <footer class="footer sm:footer-horizontal footer-center bg-accent text-gray-600 p-4">
+        <aside>
+            <p class=""><strong> Priscilla Lacerda - WEB322 Assingment 5 </strong></p>
+        </aside>
+    </footer>
+
+</body>
+</html>
