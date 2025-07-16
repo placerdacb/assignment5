@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects</title>
-  <link href="/css/main.css" rel="stylesheet" />
+  <link href="/css/output.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Projects Table -->
-    <div class="overflow-x-auto mt-20">
+    <div class="overflow-x-auto">
       <table class="table-lg border-separate border-spacing-y-6">
         <thead>
           <tr>
@@ -58,7 +58,7 @@
                 <td class="px-4 py-6"><%= project.title %></td>
                 <td class="px-4 py-6 text-center">
                   <% if (project.Sector) { %>
-                    <a href="/solutions/projects?sector=<%= project.Sector.sector_name.replace(/\s+/g, '+') %>" class="btn btn-xs btn-outline">
+                    <a href="/solutions/projects?sector=<%= project.Sector.sector_name.replace(/\s+/g, '+') %>" class="btn">
                     <%= project.Sector.sector_name %>
                   </a>
                   <% } else { %>
@@ -67,10 +67,10 @@
                 </td>
                 <td class="px-4 py-6"><%= project.summary_short %></td>
                 <td class="px-4 py-6">
-                  <a href="/solutions/projects/<%= project.id %>" target="_blank" class="btn btn-xs btn-info text-white"> Details</a>
+                  <a href="/solutions/projects/<%= project.id %>" target="_blank" class="btn"> Details</a>
                 </td>
                 <td class="px-4 py-6">
-                  <a href="/solutions/editProject/<%= project.id %>" target="_blank" class="btn btn-xs btn-success text-white"> Edit</a>
+                  <a href="/solutions/editProject/<%= project.id %>" target="_blank" class="btn"> Edit</a>
                 </td>
               </tr>
             <% }) %>

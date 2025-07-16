@@ -51,6 +51,7 @@
                             <div class="mt-2">
                               <select name="sector_id" id="sector_id" required
                               class="block w-full select select-accent">
+                              <option selected disabled>Select a Sector</option>
                               <% sectors.forEach(sector => { %>
                                 <option value="<%= sector.id %>"><%= sector.sector_name %></option>
                               <% }) %>
